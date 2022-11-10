@@ -7,3 +7,4 @@
     - transitório: executa uma tarefa e é excluido
     - persistente: fica no ar e executa tempos em tempos, com base em uma trigger pelo cronjob 
   - glue, serviço sem servidor que permite scripts scala ou python.
+- cont Profiling the source data
