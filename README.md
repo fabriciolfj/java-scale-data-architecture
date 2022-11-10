@@ -1,4 +1,7 @@
 # java-scale-data-architecture
-- na aws existe algumas opções disponíveis para processamento de dados em lote, como:
- - spark em clusters EMR
- - glue, serviço sem servidor que permite scripts scala ou python.
+
+## Processamento em lote aws
+- utilizar s3 por questões de custo e escalabilidade (mais barato que o Efs)
+- no processamento dos dados, temos:
+  - spark em clusters EMR
+  - glue, serviço sem servidor que permite scripts scala ou python.
