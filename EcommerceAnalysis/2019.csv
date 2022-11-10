@@ -1,0 +1,10 @@
+year,month,category_id,product_id,event_type
+2019,12,1,2001,purchase
+2019,11,1,2001,view
+2019,11,2,2002,purchase
+2019,10,2,2002,purchase
+2019,9,1,2001,view
+2019,2,1,2001,purchase
+2019,1,1,2001,view
+2019,4,2,2002,purchase
+2019,5,1,2001,view
