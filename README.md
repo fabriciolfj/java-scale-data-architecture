@@ -28,3 +28,10 @@ bin/kafka-topics.sh --create --topic landingTopic1 --bootstrap-server localhost:
 bin/kafka-topics.sh --create --topic richedTopic1 --bootstrap-server localhost:9092
 
 ````
+### KStream
+- uma biblioteca kafka, destinada para processamento em tempo real
+- atráves dela podemos criar uma pipeline de processo, como:
+  - ouvir um tipic
+  - processar a mensagem, aplicando regras de negócio, chamando uma api externa ou efetuando operações no banco de dados.
+  - como resultado, enviar para outro tópic
+- utilizamos sua DSL para escrever tal procedimento.
