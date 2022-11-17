@@ -33,5 +33,13 @@ bin/kafka-topics.sh --create --topic richedTopic1 --bootstrap-server localhost:9
 - atráves dela podemos criar uma pipeline de processo, como:
   - ouvir um tipic
   - processar a mensagem, aplicando regras de negócio, chamando uma api externa ou efetuando operações no banco de dados.
-  - como resultado, enviar para outro tópic
+  - como resultado, enviar para outro tópic ou salvar em uma base de dados via plugin
 - utilizamos sua DSL para escrever tal procedimento.
+
+### Kafka connect
+- podemos configurar plugins via kafka connect
+  - por exemplo: salvar o resultado de um processamento no banco de dados
+- o connector kafka possui 3 componentes:
+  - conector: faz interface kafka com fontes externas, ele cuida de qualquer protocolo externo que essas fontes de dados e coletores precisam para se comunicar com o kafka.
+  - conversor: utilizados para serializar e deserializar eventos
+  - transformador: é uma propriedade opcional, utilizada para transformar levemente os dados para que estejam no formato correto para o destino.
