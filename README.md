@@ -39,7 +39,12 @@ bin/kafka-topics.sh --create --topic richedTopic1 --bootstrap-server localhost:9
 ### Kafka connect
 - podemos configurar plugins via kafka connect
   - por exemplo: salvar o resultado de um processamento no banco de dados
+- pode-se efetuar uma configuração via cluster ou standalone
 - o connector kafka possui 3 componentes:
   - conector: faz interface kafka com fontes externas, ele cuida de qualquer protocolo externo que essas fontes de dados e coletores precisam para se comunicar com o kafka.
   - conversor: utilizados para serializar e deserializar eventos
   - transformador: é uma propriedade opcional, utilizada para transformar levemente os dados para que estejam no formato correto para o destino.
+- exemplo:
+````
+bin/connect-standalone.sh config/connect-standalone.properties connect-riskcalc-mongodb-sink.properties
+````
