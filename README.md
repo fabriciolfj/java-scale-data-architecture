@@ -48,3 +48,26 @@ bin/kafka-topics.sh --create --topic richedTopic1 --bootstrap-server localhost:9
 ````
 bin/connect-standalone.sh config/connect-standalone.properties connect-riskcalc-mongodb-sink.properties
 ````
+- abaixo um exemplo da configuração, quando cair uma mensagem no topic enrichedtopic1, a mesma será salva no dynamodb.
+````
+name=mongo-sink
+topics=enrichedTopic1
+connector.class=com.mongodb.kafka.connect.MongoSinkConnector
+tasks.max=1
+# converter configs
+key.converter=org.apache.kafka.connect.storage.StringConverter
+value.converter=org.apache.kafka.connect.json.JsonConverter
+key.converter.schemas.enable=false
+value.converter.schemas.enable=false
+# Specific global MongoDB Sink Connector configuration
+connection.uri=mongodb://root:root@localhost:27017
+database=CRRD
+collection=newloanrequest
+max.num.retries=1
+retries.defer.timeout=5000
+document.id.strategy=com.mongodb.kafka.connect.sink.processor.id.strategy.PartialValueStrategy
+document.id.strategy.partial.value.projection.list=id
+document.id.strategy.partial.value.projection.type=AllowList
+writemodel.strategy=com.mongodb.kafka.connect.sink.writemodel.strategy.ReplaceOneBusinessKeyStrategy
+
+````
